@@ -1,0 +1,285 @@
+{
+    "result_index": 0,
+    "results": [
+        {
+            "alternatives": [
+                {
+                    "timestamps": [
+                        [
+                            "and",
+                            0.88,
+                            1.08
+                        ]
+                    ],
+                    "transcript": "and "
+                }
+            ],
+            "final": false
+        }
+    ],
+    "warnings": [
+        "Unknown arguments: continuous."
+    ]
+}{
+    "result_index": 0,
+    "results": [
+        {
+            "alternatives": [
+                {
+                    "timestamps": [
+                        [
+                            "in",
+                            0.88,
+                            1.11
+                        ],
+                        [
+                            "in",
+                            1.11,
+                            1.34
+                        ]
+                    ],
+                    "transcript": "in in "
+                }
+            ],
+            "final": false
+        }
+    ]
+}{
+    "result_index": 0,
+    "results": [
+        {
+            "alternatives": [
+                {
+                    "timestamps": [
+                        [
+                            "an",
+                            0.88,
+                            1.11
+                        ],
+                        [
+                            "engine",
+                            1.11,
+                            1.55
+                        ]
+                    ],
+                    "transcript": "an engine "
+                }
+            ],
+            "final": false
+        }
+    ]
+}{
+    "result_index": 0,
+    "results": [
+        {
+            "alternatives": [
+                {
+                    "timestamps": [
+                        [
+                            "N.",
+                            0.87,
+                            1.11
+                        ],
+                        [
+                            "injuring",
+                            1.11,
+                            1.74
+                        ]
+                    ],
+                    "transcript": "N. injuring "
+                }
+            ],
+            "final": false
+        }
+    ]
+}{
+    "result_index": 0,
+    "results": [
+        {
+            "alternatives": [
+                {
+                    "timestamps": [
+                        [
+                            "N.",
+                            0.87,
+                            1.11
+                        ],
+                        [
+                            "injuring",
+                            1.11,
+                            1.77
+                        ],
+                        [
+                            "a",
+                            1.77,
+                            1.93
+                        ]
+                    ],
+                    "transcript": "N. injuring a "
+                }
+            ],
+            "final": false
+        }
+    ]
+}{
+    "result_index": 0,
+    "results": [
+        {
+            "alternatives": [
+                {
+                    "timestamps": [
+                        [
+                            "N.",
+                            0.87,
+                            1.11
+                        ],
+                        [
+                            "injuring",
+                            1.11,
+                            1.77
+                        ],
+                        [
+                            "a",
+                            1.77,
+                            1.91
+                        ],
+                        [
+                            "cat",
+                            1.91,
+                            2.24
+                        ]
+                    ],
+                    "transcript": "N. injuring a cat "
+                }
+            ],
+            "final": false
+        }
+    ]
+}{
+    "result_index": 0,
+    "results": [
+        {
+            "alternatives": [
+                {
+                    "timestamps": [
+                        [
+                            "N.",
+                            0.87,
+                            1.11
+                        ],
+                        [
+                            "injuring",
+                            1.11,
+                            1.77
+                        ],
+                        [
+                            "a",
+                            1.77,
+                            1.91
+                        ],
+                        [
+                            "caddy",
+                            1.91,
+                            2.45
+                        ]
+                    ],
+                    "transcript": "N. injuring a caddy "
+                }
+            ],
+            "final": false
+        }
+    ]
+}{
+    "result_index": 0,
+    "results": [
+        {
+            "alternatives": [
+                {
+                    "timestamps": [
+                        [
+                            "N.",
+                            0.87,
+                            1.11
+                        ],
+                        [
+                            "injuring",
+                            1.11,
+                            1.77
+                        ],
+                        [
+                            "a",
+                            1.77,
+                            1.91
+                        ],
+                        [
+                            "caddy",
+                            1.91,
+                            2.57
+                        ]
+                    ],
+                    "transcript": "N. injuring a caddy "
+                }
+            ],
+            "final": false
+        }
+    ]
+}{
+    "result_index": 0,
+    "results": [
+        {
+            "alternatives": [
+                {
+                    "confidence": 0.811,
+                    "timestamps": [
+                        [
+                            "N.",
+                            0.87,
+                            1.11
+                        ],
+                        [
+                            "injuring",
+                            1.11,
+                            1.77
+                        ],
+                        [
+                            "a",
+                            1.77,
+                            1.91
+                        ],
+                        [
+                            "caddy",
+                            1.91,
+                            2.57
+                        ]
+                    ],
+                    "transcript": "N. injuring a caddy ",
+                    "word_confidence": [
+                        [
+                            "N.",
+                            0.352
+                        ],
+                        [
+                            "injuring",
+                            0.752
+                        ],
+                        [
+                            "a",
+                            1.0
+                        ],
+                        [
+                            "caddy",
+                            0.996
+                        ]
+                    ]
+                },
+                {
+                    "transcript": "and injuring a caddy "
+                },
+                {
+                    "transcript": "N. injuring a caddie "
+                }
+            ],
+            "final": true
+        }
+    ]
+}

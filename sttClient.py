@@ -21,12 +21,18 @@
 import json                        # json
 import threading                   # multi threading
 import os                          # for listing directories
-import Queue                       # queue used for thread syncronization
+#import Queue                       # queue used for thread syncronization
+from multiprocessing import Queue
+import queue as Queue
 import sys                         # system calls
 import argparse                    # for parsing arguments
 import base64                      # necessary to encode in base64
 #                                  # according to the RFC2045 standard
 import requests                    # python HTTP requests library
+import openpyxl
+from pandas import DataFrame
+from datetime import datetime
+
 
 # WebSockets
 from autobahn.twisted.websocket import WebSocketClientProtocol, \
@@ -346,7 +352,7 @@ if __name__ == '__main__':
                                          args.credentials[1]))
     else:
         auth = args.credentials[0] + ":" + args.credentials[1]
-        headers["Authorization"] = "Basic " + base64.b64encode(auth)
+        headers["Authorization"] = "Basic " + base64.urlsafe_b64encode(auth.encode('UTF-8')).decode('ascii')
 
     print(headers)
     # create a WS server factory with our protocol
@@ -375,21 +381,43 @@ if __name__ == '__main__':
     f = open(fileHypotheses, "w")
     successful = 0
     emptyHypotheses = 0
-    print sorted(summary.items())
+    print(sorted(summary.items()))
     counter = 0
+    rowsRequired = []
     for key, value in enumerate(sorted(summary.items())):
-        value = value[1]  
+        value = value[1]	
         if value['status']['code'] == 1000:
             print('{}: {} {}'.format(key, value['status']['code'],
-                                     value['hypothesis'].encode('utf-8')))
+                                     value['hypothesis']))
             successful += 1
             if value['hypothesis'][0] == "":
                 emptyHypotheses += 1
         else:
             fmt = '{}: {status[code]} REASON: {status[reason]}'
-            print(fmt.format(key, **status))
-        f.write('{}: {}\n'.format(counter + 1, value['hypothesis'].encode('utf-8')))
+            #print(fmt.format(key, **status))
+        f.write('{}: {}\n'.format(counter + 1, value['hypothesis']))
+        rowsRequired.append(value['hypothesis'])
         counter += 1
     f.close()
     fmt = "successful sessions: {} ({} errors) ({} empty hypotheses)"
     print(fmt.format(successful, len(summary) - successful, emptyHypotheses))
+	
+	
+    #writing into excel files
+    #directoryOutput = args.dirOutput.split("/")
+    #directoryOutput = directoryOutput[1]
+	
+    foldername = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]
+    foldername = foldername.replace(" ", "_")
+    foldername = foldername.replace(":", "_")
+    try:
+        os.makedirs(args.dirOutput+'/'+foldername)
+    except OSError as e:
+        pass
+        if e.errno != errno.EEXIST:
+           raise
+		   
+    dfRequired = DataFrame({'Sentenses': rowsRequired})
+    dfRequired.to_excel(args.dirOutput+'/'+foldername+'/'+'speech-to-text.xlsx', sheet_name='sheet1', index=False)
+			   
+					
